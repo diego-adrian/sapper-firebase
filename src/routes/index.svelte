@@ -14,7 +14,7 @@
 	export let movies;
 	export let URL_SMALL_IMAGE;
 	export let URL_BIG_IMAGE;
-	if (Array.isArray(movies) && movies.length > 0) {
+	if (Array.isArray(movies) && movies.length > 0 && !$Store.title) {
 		const firstMovie = movies[0];
 		Store.update(state => ({
 			...state,
