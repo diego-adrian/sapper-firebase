@@ -1,38 +1,35 @@
+<script context="module">
+  export async function preload(page, session) {
+		const { API_KEY_MOVIEDB, LANGUAGE_MOVIEDB, URL_MOVIEDB, URL_SMALL_IMAGE, URL_BIG_IMAGE } = session;
+		let movies = await this.fetch(`${URL_MOVIEDB}movie/popular?api_key=${API_KEY_MOVIEDB}&language=${LANGUAGE_MOVIEDB}&page=1`);
+		movies = await movies.json();
+		movies = movies.results || [];
+    return { movies, URL_SMALL_IMAGE, URL_BIG_IMAGE };
+  }
+</script>
 <script>
-	import successkid from 'images/successkid.jpg';
+	import Store from '../store';
+	import Page from '../components/Page.svelte';
+	import Thumbnail from '../components/Thumbnail.svelte';
+	export let movies;
+	export let URL_SMALL_IMAGE;
+	export let URL_BIG_IMAGE;
+	if (Array.isArray(movies) && movies.length > 0) {
+		const firstMovie = movies[0];
+		Store.update(state => ({
+			...state,
+			id: firstMovie.id,
+			adult: firstMovie.adult,
+			url: firstMovie.poster_path,
+			title: firstMovie.title,
+			ranking: firstMovie.vote_average,
+			detail: firstMovie.overview
+		}));
+	}
 </script>
 
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
 	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
 	}
 </style>
 
@@ -40,11 +37,6 @@
 	<title>Movie Svelte</title>
 </svelte:head>
 
-<h1>Great success!</h1>
-
-<figure>
-	<img alt="Success Kid" src="{successkid}">
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<Page urlBig={URL_BIG_IMAGE}>
+	<Thumbnail {movies} urlSmall={URL_SMALL_IMAGE} />
+</Page>

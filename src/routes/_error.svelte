@@ -8,12 +8,14 @@
 <style>
 	h1, p {
 		margin: 0 auto;
+		color: var(--red);
 	}
 
 	h1 {
 		font-size: 2.8em;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
+		color: var(--red);
 	}
 
 	p {

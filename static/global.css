@@ -1,11 +1,19 @@
 body {
 	margin: 0;
 	font-family: 'Rajdhani', sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
-	color: #333;
+	font-size: 16px;
+	color: var(--white);
 }
 
+:root {
+	--primary: #36494A;
+	--red: #F00000;
+	--yellow: #F7BB0E;
+	--black: #29282C;
+	--white: #FFFFFF;
+	--height: 100vh;
+
+}
 
 @media (min-width: 400px) {
 	body {
