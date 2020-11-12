@@ -47,7 +47,7 @@
   }
   .return {
     padding: 10px;
-    background: var(--white);
+    background: var(--transparent);
     border-top: 2px solid var(--red);
     border-bottom: 2px solid var(--red);
     color: var(--red);
