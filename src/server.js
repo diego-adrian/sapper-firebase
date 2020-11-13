@@ -6,9 +6,9 @@ import * as sapper from '@sapper/server';
 
 const { PORT, NODE_ENV, API_KEY_MOVIEDB, URL_MOVIEDB, LANGUAGE_MOVIEDB, URL_SMALL_IMAGE, URL_BIG_IMAGE } = process.env;
 const dev = NODE_ENV === 'development';
-
 polka() // You can also use Express
 	.use(
+		'sapper-firebase',
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware({
