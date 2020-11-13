@@ -97,7 +97,7 @@
 <div class="Ticket" style="background: url({$session.URL_BIG_IMAGE}{$Store.url})">
   <div class="gradient" />
   <div class="description">
-    <a href="/" class="return">Regresar a la página principal</a>
+    <a href="./" class="return">Regresar a la página principal</a>
     {#if user}
       <div>Ahora puede ver este contenido</div>
       {:else}

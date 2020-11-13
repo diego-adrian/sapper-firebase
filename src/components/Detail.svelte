@@ -54,7 +54,7 @@
 <div class="Detail">
   <div class="title">{$Store.title}</div>
   <div class="details">
-    <a href="information" class="Popular">Saber más sobre {$Store.title}</a>
+    <a href="./information" class="Popular">Saber más sobre {$Store.title}</a>
     <div class="Adult">
       {#if $Store.adult}
         18+

@@ -39,7 +39,7 @@
 </style>
 
 <div class="Thumbnail">
-  <a href="ticket" class="ticket">Comprar ticket</a>
+  <a href="./ticket" class="ticket">Comprar ticket</a>
   <div class="movies">
     {#each movies as movie (movie.id)}
       <Movie {movie} {urlSmall}/>

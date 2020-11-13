@@ -59,7 +59,7 @@
 <div class="Information" style="background: url({$session.URL_BIG_IMAGE}{$Store.url})">
   <div class="gradient" />
   <div class="description">
-    <a href="/" class="return">Regresar a la página principal</a>
+    <a href="./" class="return">Regresar a la página principal</a>
     <div class="title">{$Store.title}</div>
     {$Store.detail}
   </div>
