@@ -32,7 +32,7 @@
     try {
       const Provider = new firebase.auth.GoogleAuthProvider();
       await auth.signInWithPopup(Provider);
-      goto('/ticket');
+      goto('./ticket');
     } catch (error) {
       console.error(error.message);
     }
