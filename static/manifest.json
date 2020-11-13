@@ -4,7 +4,7 @@
 	"name": "sapper-firebase",
 	"short_name": "sapperMovie",
 	"display": "fullscreen",
-	"start_url": "/",
+	"start_url": ".",
 	"icons": [
 		{
 			"src": "logo-192.png",
