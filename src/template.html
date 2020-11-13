@@ -15,7 +15,8 @@
 	     and anything else it needs to hydrate the app and
 	     initialise the router -->
 	%sapper.scripts%
-
+	<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
 	<!-- Sapper generates a <style> tag containing critical CSS
 	     for the current page. CSS for the rest of the app is
 	     lazily loaded when it precaches secondary pages -->
@@ -30,5 +31,20 @@
 	<!-- The application will be rendered inside this element,
 	     because `src/client.js` references it -->
 	<div id="sapper">%sapper.html%</div>
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyABpgr_cuHSFyDhzIq9tSuahPjhPTstIss",
+			authDomain: "app-sapper.firebaseapp.com",
+			databaseURL: "https://app-sapper.firebaseio.com",
+			projectId: "app-sapper",
+			storageBucket: "app-sapper.appspot.com",
+			messagingSenderId: "448132746399",
+			appId: "1:448132746399:web:19cbddfe674a11beed66aa"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		const auth = firebase.auth();
+	</script>
 </body>
 </html>

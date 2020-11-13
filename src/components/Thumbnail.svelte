@@ -12,6 +12,8 @@
     left: 0;
     right: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     z-index: 2;
   }
   .movies {
@@ -22,20 +24,22 @@
     justify-content: flex-start;
     overflow: auto;
   }
-  button {
+  .ticket {
     background: var(--red);
     color: var(--white);
     padding: 10px;
+    margin: auto;
     margin-bottom: 10px;
     outline: none;
-    width: 150px;
     border-radius: 5px;
     border: none;
+    width: 120px;
+    text-decoration: none;
   }
 </style>
 
 <div class="Thumbnail">
-  <button>Comprar ticket</button>
+  <a href="ticket" class="ticket">Comprar ticket</a>
   <div class="movies">
     {#each movies as movie (movie.id)}
       <Movie {movie} {urlSmall}/>

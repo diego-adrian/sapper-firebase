@@ -1,6 +1,13 @@
 <script>
-import { text } from "svelte/internal";
-
+  import { stores } from '@sapper/app';
+  import Avatar from '../../static/avatar.png';
+  const { session } = stores();
+  
+  async function logout () {
+    if ($session.user) {
+      await firebase.auth().signOut();
+    }
+  }
 </script>
 
 <style>
@@ -18,15 +25,22 @@ import { text } from "svelte/internal";
     background: transparent;
     outline: none;
     margin-top: 10px;
-    width: 85%;
+    width: 75%;
     margin-bottom: 10px;
     color: var(--white);
+    margin-right: 10px;
   }
   ::placeholder {
     color: var(--white);
+  }
+  img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
   }
 </style>
 
 <div class="Search">
   <input type="text" placeholder="Busca tu película favorita..."/>
+  <img src={Avatar} on:click={logout} alt="login" style="{!$session.user ? 'filter: grayscale(1)': ''}"/>
 </div>

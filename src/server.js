@@ -13,6 +13,7 @@ polka() // You can also use Express
 		sirv('static', { dev }),
 		sapper.middleware({
 			session: () => ({
+				user: false,
 				API_KEY_MOVIEDB,
 				URL_MOVIEDB,
 				LANGUAGE_MOVIEDB,

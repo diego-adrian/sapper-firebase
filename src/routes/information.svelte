@@ -1,13 +1,7 @@
-<script context="module">
-  export async function preload(page, session) {
-    const { URL_BIG_IMAGE } = session;
-    return { urlBig: URL_BIG_IMAGE };
-  }
-</script>
-
 <script>
+  import { stores } from '@sapper/app';
   import Store from '../store';
-  export let urlBig;
+  const { session } = stores();
 </script>
 
 <style>
@@ -62,7 +56,7 @@
   <title>Information</title>
 </svelte:head>
 
-<div class="Information" style="background: url({urlBig}{$Store.url})">
+<div class="Information" style="background: url({$session.URL_BIG_IMAGE}{$Store.url})">
   <div class="gradient" />
   <div class="description">
     <a href="/" class="return">Regresar a la página principal</a>
