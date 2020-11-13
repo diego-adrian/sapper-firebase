@@ -4,6 +4,7 @@
 	"name": "sapper-firebase",
 	"short_name": "sapperMovie",
 	"display": "fullscreen",
+	"orientation": "portrait",
 	"start_url": ".",
 	"scope": ".",
 	"icons": [
